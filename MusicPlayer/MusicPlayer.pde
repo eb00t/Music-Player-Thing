@@ -12,10 +12,14 @@ AudioPlayer ap;
 DiscoBall d;
 Lighting l;
 
+float halfH; //half height
+float lerpedAverage = 0;
+float colorInc;
 
 void setup()
 {
-  fullScreen(P3D);
+  size(1024, 800, P3D);
+  //fullScreen(P3D);
   colorMode(HSB);
   minim = new Minim(this);
   ap = minim.loadFile ("groove.mp3", 1024);
@@ -28,12 +32,7 @@ void setup()
   colorMode(HSB);
 }
 
-float halfH; //half height
-float lerpedAverage = 0;
-float colourInc;
-
-
-float [] lerpedBuffer = new float [width];
+float [] lerpedBuffer = new float [1024];
 
 void draw()
 {
@@ -50,10 +49,11 @@ void drawLine()
   for (int i = 0; i < ab.size(); i++)
   {
     sum += abs(ab.get(i));
-    //lerpedBuffer[i] = lerp(lerpedBuffer[i], ab.get(i), 0.1f);
-    stroke(colourInc * i, 255, 255);
-    line (i, 150 - ab.get(i) * halfH, i, 150 + ab.get(i) * halfH);
-    //line (i, halfH - lerpedBuffer[i] * halfH * 4f, halfH + lerpedBuffer[i] * halfH * 4f, i);
+    lerpedBuffer[i] = lerp(lerpedBuffer[i], ab.get(i), 0.25f);
+    stroke(colorInc * i, 255, 255);
+    line (i, 146 - lerpedBuffer[i] * halfH, i, 146 + lerpedBuffer[i] * halfH);
+   //line (i, 877 - lerpedBuffer[i] * halfH, i, 877 + lerpedBuffer[i] * halfH);
+    line (i, halfH - lerpedBuffer[i] * halfH * 4f, halfH + lerpedBuffer[i] * halfH * 4f, i);
   }
   float average = sum / (float) ab.size();
   lerpedAverage = lerp(lerpedAverage, average, 0.1f);
