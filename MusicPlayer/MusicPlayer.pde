@@ -22,7 +22,7 @@ void setup()
   ap.play();
   ab = ap.mix;
   halfH = height/2;
-  //colorInc = 255/(float)ab.size();
+  colorInc = 255/(float)ab.size();
   d = new DiscoBall(width/2, height/2, width/5); //Draws the disco ball
   l = new Lighting(width/2, height/2); //Creates the lights
   colorMode(HSB);
