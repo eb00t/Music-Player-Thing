@@ -15,6 +15,7 @@ Lighting l;
 float halfH; //half height
 float lerpedAverage = 0;
 float colorInc;
+//float colorInc2;
 
 void setup()
 {
@@ -24,6 +25,7 @@ void setup()
   minimInitialise();
   halfH = height/2;
   colorInc = 255/(float)ab.size();
+  //colorInc2 = (float) ab.size() / 255;
   d = new DiscoBall(width/2, height/2, width/5); //Draws the disco ball
   l = new Lighting(width/2, height/2); //Creates the lights
   colorMode(HSB);
@@ -50,6 +52,7 @@ void drawLine()
     stroke(colorInc * i, 255, 255);
     line (i, 146 - lerpedBuffer[i] * halfH, i, 146 + lerpedBuffer[i] * halfH);
     //line (i, 877 - lerpedBuffer[i] * halfH, i, 877 + lerpedBuffer[i] * halfH);
+    //stroke(colorInc * i, 255, 255);
     line (i, halfH - lerpedBuffer[i] * halfH * 4f, halfH + lerpedBuffer[i] * halfH * 4f, i);
   }
   float average = sum / (float) ab.size();
@@ -58,8 +61,9 @@ void drawLine()
 
 void minimInitialise()
 {
-   minim = new Minim(this);
-  ap = minim.loadFile ("groove.mp3", 1024);
+  minim = new Minim(this);
+  //ap = minim.loadFile ("riteofpassage.mp3", 1024);
+  ap = minim.loadFile ("David_Dima_-_With_a_Little_Bit_of_True_Love.mp3", 1024);
   ap.play();
   ab = ap.mix;
 }
