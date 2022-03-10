@@ -9,8 +9,8 @@ Minim minim;
 AudioBuffer ab;
 AudioPlayer ap;
 
-DiscoBall d;
-Lighting l;
+DiscoBall discoBall;
+Lighting lighting;
 
 float halfH; //half height
 float lerpedAverage = 0;
@@ -26,8 +26,8 @@ void setup()
   halfH = height/2;
   colorInc = 255/(float)ab.size();
   //colorInc2 = (float) ab.size() / 255;
-  d = new DiscoBall(width/2, height/2, width/5); //Draws the disco ball
-  l = new Lighting(width/2, height/2); //Creates the lights
+  discoBall = new DiscoBall(width/2, height/2, width/5); //Draws the disco ball
+  lighting = new Lighting(0, 0); //Creates the lights
   colorMode(HSB);
 }
 
@@ -35,11 +35,13 @@ float [] lerpedBuffer = new float [1024];
 
 void draw()
 {
-  background(0);
+  background(#24488E);
   drawLine();
-  d.render(); //d is the Disco Ball
-  d.update();
-  l.render(); //l is the Lighting
+  discoBall.render(); //d is the Disco Ball
+  discoBall.update();
+  lighting.render(); //l is the Lighting
+  
+  lights();
 }
 
 void drawLine()
@@ -49,7 +51,7 @@ void drawLine()
   {
     sum += abs(ab.get(i));
     lerpedBuffer[i] = lerp(lerpedBuffer[i], ab.get(i), 0.25f);
-    stroke(colorInc * i, 255, 255);
+    stroke(#3B77EA);
     line (i, 146 - lerpedBuffer[i] * halfH, i, 146 + lerpedBuffer[i] * halfH);
     //line (i, 877 - lerpedBuffer[i] * halfH, i, 877 + lerpedBuffer[i] * halfH);
     //stroke(colorInc * i, 255, 255);

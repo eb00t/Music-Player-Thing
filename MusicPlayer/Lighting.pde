@@ -2,9 +2,11 @@ class Lighting
 {
   float hD1, sD1, bD1; //HSB Values for the Directional Light
   int lx, ly;
-
-  Lighting(float CenterX, float CenterY)
+  
+  Lighting(int lx, int ly)
   {
+    this.lx = lx;
+    this.ly = ly;
     hD1 = random(0, 255);
     sD1 = 255;
     bD1 = 255;
