@@ -15,7 +15,7 @@ class DiscoBall
   void render()
   {
     pushMatrix();
-    fill(#122243);
+    //fill(#122243);
     //noFill();
     //strokeWeight(2);
     noStroke();

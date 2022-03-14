@@ -9,8 +9,8 @@ Minim minim;
 AudioBuffer ab;
 AudioPlayer ap;
 
-DiscoBall discoBall;
 Lighting lighting;
+DiscoBall discoBall;
 
 float halfH; //half height
 float lerpedAverage = 0;
@@ -26,8 +26,8 @@ void setup()
   halfH = height/2;
   colorInc = 255/(float)ab.size();
   //colorInc2 = (float) ab.size() / 255;
-  discoBall = new DiscoBall(width/2, height/2, width/5); //Draws the disco ball
   lighting = new Lighting(0, 0); //Creates the lights
+  discoBall = new DiscoBall(width/2, height/2, width/5); //Draws the disco ball
   colorMode(HSB);
 }
 
@@ -37,11 +37,9 @@ void draw()
 {
   background(#24488E);
   drawLine();
+  lighting.render(); //l is the Lighting
   discoBall.render(); //d is the Disco Ball
   discoBall.update();
-  lighting.render(); //l is the Lighting
-  
-  lights();
 }
 
 void drawLine()
@@ -64,8 +62,13 @@ void drawLine()
 void minimInitialise()
 {
   minim = new Minim(this);
-  //ap = minim.loadFile ("riteofpassage.mp3", 1024);
+  //ap = minim.loadFile ("riteofpassage.mp3", 1024); //(THIS IS THE MOST IMPORTANT LINE OF CODE IN THE ENTIRE PROJECT!)
   ap = minim.loadFile ("David_Dima_-_With_a_Little_Bit_of_True_Love.mp3", 1024);
   ap.play();
   ab = ap.mix;
+}
+
+void createLights()
+{
+  
 }
