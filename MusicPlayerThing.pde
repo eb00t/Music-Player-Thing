@@ -19,6 +19,7 @@ float musicMax = 0; // maximum peak of the audio at a given time
 float musicAvg = 0; // average of peaks of the audio at a given time
 float calc = 0;
 float abClone[] = new float[1024];
+float rotation;
 
 void minimInitialise() // For setup, sets minim variables and plays audio
 {
@@ -41,41 +42,40 @@ void setup()
 void draw()
 {
   background(0);
-
+  rotation += 0.01f;
   // passes values into class, needs to be in draw because values are constantly updating
   boxVis = new BoxVisualiser(musicMax, musicAvg);
   danceFloor = new DanceFloor(musicMax, musicAvg);
   barVis = new BarVisualiser(abClone);
-  discoBall = new DiscoBall(width/2, height/2, width/5);
+  discoBall = new DiscoBall(width/2, height/2, width/5, rotation);
 
   passMusicVals();
 
   // checks if the audio called inside minim is playing (it may take a few seconds to start playing)
   if (audioPlayer.isPlaying()) {
     // checks if time in the song is less than x miliseconds (1 seconds = 1000 milliseconds)
-    if (audioPlayer.position() < 10000) {
+    if (audioPlayer.position() < 26500) {
       boxVis.createBox(); // draws box that changes size based on audio
     }
 
-    if (audioPlayer.position() > 10000 && audioPlayer.position() < 20000) {
+    if (audioPlayer.position() > 26500 && audioPlayer.position() < 40000) {
+      lighting.render();
+      lighting.CreateLight();
+
+      discoBall.render();
+    }
+
+    if (audioPlayer.position() > 26500 && audioPlayer.position() < 40000) {
       danceFloor.drawFloor(); // draws 3d dance floor
     }
 
-    if (audioPlayer.position() > 20000 && audioPlayer.position() < 30000) {
+    if (audioPlayer.position() > 40000 && audioPlayer.position() < 50000) {
       // draws an audio visualiser (as a waveform) using lines
       cloneArray();
       barVis.drawBars();
     }
 
-    if (audioPlayer.position() > 30000 && audioPlayer.position() < 40000) {
-      lighting.render();
-      lighting.CreateLight();
-
-      discoBall.render();
-      discoBall.update();
-    }
-
-    if (audioPlayer.position() > 40000 && audioPlayer.position() < 50000) {
+    if (audioPlayer.position() > 50000 && audioPlayer.position() < 60000) {
       // draws an audio visualiser (as a waveform) using lines
       cloneArray();
       barVis.drawDiagonal();
