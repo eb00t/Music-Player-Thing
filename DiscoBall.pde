@@ -15,12 +15,7 @@ class DiscoBall
   void render()
   {
     pushMatrix();
-    //fill(#122243);
-    //noFill();
-    //strokeWeight(2);
     noStroke();
-    //shininess(1);
-    //stroke(255);
     translate (xD1, yD1, 0);
     rotateY(rotation);
     sphere(size);
