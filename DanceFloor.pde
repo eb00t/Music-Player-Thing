@@ -24,8 +24,8 @@ class DanceFloor
       for (int y = 0; y < 3; y++)
       {
         pushMatrix();
-        noStroke();
-        //stroke(0);
+        //noStroke();
+        stroke(0);
         float randomise = random(10, 20);
         float num = musicAvg * randomise * width;
         colorVal = lerp(colorVal, num, .05f);
