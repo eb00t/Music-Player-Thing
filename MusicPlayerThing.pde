@@ -80,10 +80,12 @@ void draw()
       cloneArray();
       barVis.drawDiagonal();
     }
-    
+
     progressIndicator(); // draws time indicator and progress bar at bottom of screen
   } else {
-    text("Player has finished or is loading.", width/2, height/2);
+    textSize(32);
+    textAlign(CENTER);
+    text("PAUSED / LOADING", width/2, height/2);
   }
 }
 
@@ -135,13 +137,16 @@ void progressIndicator()
   float barPos = (currentTime/1000) * step; // multiplies the number of steps by the number of seconds that have played so far
 
   fill(255);
-  
+
   // basically turns the sketch into a janky youtube
   if (mousePressed && mouseY > height - 30) // makes sure the mouse is on the position of the bar and checks if mouse is pressed
   {
     audioPlayer.cue(int(map(mouseX, 0, width, 0, audioPlayer.length()))); // sets audioPlayer position to a time based on mouseX
     barPos = mouseX;
   }
+
+  textSize(12);
+  textAlign(LEFT);
 
   // checks if second is below 10 and adds a 0 to the start if it is, else it doesn't (i.e time displayed as 5:9 so i changed it to 5:09)
   if (ctSec < 10) {
@@ -151,4 +156,16 @@ void progressIndicator()
   }
 
   rect(0, height - 30, barPos, height - 30);
+}
+
+void keyPressed()
+{
+  if (key == ' ') {
+    if (audioPlayer.isPlaying())
+    {
+      audioPlayer.pause();
+    } else {
+      audioPlayer.play();
+    }
+  }
 }
