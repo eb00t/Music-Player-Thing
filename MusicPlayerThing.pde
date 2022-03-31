@@ -20,6 +20,8 @@ float musicAvg = 0; // average of peaks of the audio at a given time
 float calc = 0;
 float abClone[] = new float[1024];
 float rotation;
+PFont OpenSans;
+PFont OpenSansItalic;
 
 void minimInitialise() // For setup, sets minim variables and plays audio
 {
@@ -35,7 +37,9 @@ void setup()
   colorMode(HSB);
 
   minimInitialise();
-
+  OpenSans = createFont("OpenSans.ttf", 32);
+  OpenSansItalic = createFont("OpenSans-Italic.ttf", 12);
+  textFont(OpenSans);
   lighting = new Lighting(0, 0);
 }
 
@@ -83,7 +87,7 @@ void draw()
 
     progressIndicator(); // draws time indicator and progress bar at bottom of screen
   } else {
-    textSize(32);
+    textFont(OpenSans);
     textAlign(CENTER);
     text("PAUSED / LOADING", width/2, height/2);
   }
@@ -144,15 +148,14 @@ void progressIndicator()
     audioPlayer.cue(int(map(mouseX, 0, width, 0, audioPlayer.length()))); // sets audioPlayer position to a time based on mouseX
     barPos = mouseX;
   }
-
-  textSize(12);
+  textFont(OpenSansItalic);
   textAlign(LEFT);
 
   // checks if second is below 10 and adds a 0 to the start if it is, else it doesn't (i.e time displayed as 5:9 so i changed it to 5:09)
   if (ctSec < 10) {
-    text(ctMin + ":0" + ctSec + " / " + rtMin + ":" + rtSec + " | Click on progress bar to change audio position", 50, height - 50);
+    text(ctMin + ":0" + ctSec + " / " + rtMin + ":" + rtSec + " | Click on progress bar to change audio position.", 50, height - 50);
   } else {
-    text(ctMin + ":" + ctSec + " / " + rtMin + ":" + rtSec + " | Click on progress bar to change audio position", 50, height - 50);
+    text(ctMin + ":" + ctSec + " / " + rtMin + ":" + rtSec + " | Click on progress bar to change audio position.", 50, height - 50);
   }
 
   rect(0, height - 30, barPos, height - 30);
