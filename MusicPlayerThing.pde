@@ -46,9 +46,9 @@ void setup()
 void draw()
 {
   background(0);
-  rotation += 0.01f;
+  rotation += abs((musicAvg*10)); // rotation for boxvisualiser and discoball
   // passes values into class, needs to be in draw because values are constantly updating
-  boxVis = new BoxVisualiser(musicMax, musicAvg);
+  boxVis = new BoxVisualiser(musicMax, musicAvg, rotation);
   danceFloor = new DanceFloor(musicMax, musicAvg);
   barVis = new BarVisualiser(abClone);
   discoBall = new DiscoBall(width/2, height/2, width/5, rotation);
