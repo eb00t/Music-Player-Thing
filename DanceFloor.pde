@@ -3,7 +3,9 @@ class DanceFloor
   float cubeSize = height/30;
   float musicMax;
   float musicAvg;
-  float colorVal = 0;
+  float colorVal;
+  float randomise;
+  float num;
 
   DanceFloor(float musicMax, float musicAvg)
   {
@@ -11,29 +13,31 @@ class DanceFloor
     this.musicAvg = musicAvg;
   }
 
-  /* 
-    nested loop (x*y dancefloor size)
-    randomises the colour of each square of the dance floor,
-    moves dancefloor to centre X, moves each new box over cubeSize
-    creates each box of the dance floor
-  */
+  /*
+   nested loop (x*y dancefloor size)
+   randomises the colour of each square of the dance floor,
+   moves dancefloor to centre X, moves each new box over cubeSize
+   creates each box of the dance floor
+   */
   void drawFloor()
   {
-    for (int x = 0; x < 3; x++)
+
+    for (int x = 0; x < 20; x++)
     {
-      for (int y = 0; y < 3; y++)
+      for (int y = 0; y < 5; y++)
       {
         pushMatrix();
+        randomise = random(0, 255);
+        num = musicAvg * randomise * 63.5;
+        colorVal = lerp(colorVal, num, 0.3f);
+
+        fill(colorVal, 255, 255);
         //noStroke();
         stroke(0);
-        float randomise = random(10, 20);
-        float num = musicAvg * randomise * width;
-        colorVal = lerp(colorVal, num, .05f);
-        
-        fill(colorVal, 255, 255);
-        rotateX(QUARTER_PI);
-        translate (x*cubeSize + width/2 - cubeSize, y*cubeSize + height/1.3);
-        
+
+        rotateX(degrees(60));
+        translate (-x*cubeSize + width/2 + (cubeSize * 9), y*cubeSize + height/1.3);
+
         box(cubeSize);
         popMatrix();
       }

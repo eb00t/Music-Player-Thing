@@ -40,18 +40,20 @@ void setup()
   OpenSans = createFont("OpenSans.ttf", 32);
   OpenSansItalic = createFont("OpenSans-Italic.ttf", 12);
   textFont(OpenSans);
-  lighting = new Lighting(0, 0);
+  
 }
 
 void draw()
 {
+  lights();
   background(0);
   rotation += abs((musicAvg*10)); // rotation for boxvisualiser and discoball
   // passes values into class, needs to be in draw because values are constantly updating
   boxVis = new BoxVisualiser(musicMax, musicAvg, rotation);
   danceFloor = new DanceFloor(musicMax, musicAvg);
   barVis = new BarVisualiser(abClone);
-  discoBall = new DiscoBall(width/2, height/2, width/5, rotation);
+  discoBall = new DiscoBall(width/2, height/4, height/6, rotation);
+  lighting = new Lighting(0, 0, musicAvg);
 
   passMusicVals();
 
@@ -63,14 +65,10 @@ void draw()
     }
 
     if (audioPlayer.position() > 26500 && audioPlayer.position() < 40000) {
-      lighting.render();
+      danceFloor.drawFloor(); // draws 3d dance floor
       lighting.CreateLight();
 
       discoBall.render();
-    }
-
-    if (audioPlayer.position() > 26500 && audioPlayer.position() < 40000) {
-      danceFloor.drawFloor(); // draws 3d dance floor
     }
 
     if (audioPlayer.position() > 40000 && audioPlayer.position() < 50000) {
