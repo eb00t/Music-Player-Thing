@@ -24,7 +24,7 @@ class DanceFloor
 
     for (int x = 0; x < 20; x++)
     {
-      for (int y = 0; y < 5; y++)
+      for (int y = 0; y < 4; y++)
       {
         pushMatrix();
         randomise = random(0, 255);
