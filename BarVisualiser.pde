@@ -19,7 +19,7 @@ class BarVisualiser
     for (int i = 0; i < audioBuffer.length; i++)
     {
       float num = abs(audioBuffer[i] * height/2); // change height/2 to i for a smallest -> biggest graph
-      lerpNum = lerp(lerpNum, num, 0.1f);
+      lerpNum = lerp(lerpNum, num, 5f);
       stroke(255);
       line(i+step, height/2, i+step, height/2 - num); // x1, y1, x2, y2
     }
@@ -31,7 +31,7 @@ class BarVisualiser
     for (int i = 0; i < audioBuffer.length; i++)
     {
       float num = abs(audioBuffer[i]); // change height/2 to i for a smallest -> biggest graph
-      lerpNum = lerp(lerpNum, num, 0.1f);
+      lerpNum = lerp(lerpNum, num, 1f);
       stroke(#3B77EA);
       line (i, height/2 - lerpNum * height/2 * 4f, height/2 + lerpNum * height/2 * 4f, i);
     }
