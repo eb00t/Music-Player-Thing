@@ -14,6 +14,7 @@ DanceFloor danceFloor;
 BarVisualiser barVis;
 DiscoBall discoBall;
 Lighting lighting;
+compactDisc compactDisc;
 
 float musicMax = 0; // maximum peak of the audio at a given time
 float musicAvg = 0; // average of peaks of the audio at a given time
@@ -40,7 +41,6 @@ void setup()
   OpenSans = createFont("OpenSans.ttf", 32);
   OpenSansItalic = createFont("OpenSans-Italic.ttf", 12);
   textFont(OpenSans);
-  
 }
 
 void draw()
@@ -54,6 +54,7 @@ void draw()
   barVis = new BarVisualiser(abClone);
   discoBall = new DiscoBall(width/2, height/4, height/6, rotation);
   lighting = new Lighting(0, 0, musicAvg);
+  compactDisc = new compactDisc (0, height/2, 1);
 
   passMusicVals();
 
@@ -82,6 +83,14 @@ void draw()
       cloneArray();
       barVis.drawDiagonal();
     }
+
+    if (audioPlayer.position() > 60000 && audioPlayer.position() < 70000) {
+      // draws an audio visualiser (as a waveform) using lines
+      cloneArray();
+      compactDisc.drawCDs();
+
+    }
+
 
     progressIndicator(); // draws time indicator and progress bar at bottom of screen
   } else {
