@@ -46,7 +46,7 @@ void setup()
 void draw()
 {
   lights();
-  background(0);
+  
   rotation += abs((musicAvg*10)); // rotation for boxvisualiser and discoball
   // passes values into class, needs to be in draw because values are constantly updating
   boxVis = new BoxVisualiser(musicMax, musicAvg, rotation);
@@ -62,29 +62,34 @@ void draw()
   if (audioPlayer.isPlaying()) {
     // checks if time in the song is less than x miliseconds (1 seconds = 1000 milliseconds)
     if (audioPlayer.position() < 26500) {
+      background(0);
       boxVis.createBox(); // draws box that changes size based on audio
     }
 
     if (audioPlayer.position() > 26500 && audioPlayer.position() < 40000) {
+      
       danceFloor.drawFloor(); // draws 3d dance floor
       lighting.CreateLight();
-
+      
       discoBall.render();
     }
 
     if (audioPlayer.position() > 40000 && audioPlayer.position() < 50000) {
       // draws an audio visualiser (as a waveform) using lines
+      background(0);
       cloneArray();
       barVis.drawBars();
     }
 
     if (audioPlayer.position() > 50000 && audioPlayer.position() < 60000) {
+      background(0);
       // draws an audio visualiser (as a waveform) using lines
       cloneArray();
       barVis.drawDiagonal();
     }
 
     if (audioPlayer.position() > 60000 && audioPlayer.position() < 70000) {
+      
       // draws an audio visualiser (as a waveform) using lines
       cloneArray();
       compactDisc.drawCDs();
