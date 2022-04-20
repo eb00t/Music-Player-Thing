@@ -89,7 +89,7 @@ void draw()
     }
 
     if (audioPlayer.position() > 60000 && audioPlayer.position() < 70000) {
-      
+      background(0);
       // draws an audio visualiser (as a waveform) using lines
       cloneArray();
       compactDisc.drawCDs();
