@@ -3,7 +3,6 @@ class compactDisc
   float rotateCD; //how fast the cd spins
   float cdX, cdY, cdSize; //x coord, y coord and size of cd
   float hue1, hue2, saturation, brightness;
-
   compactDisc(float cdX, float cdY, float cdSize)
   {
     this.cdX = cdX;
@@ -12,13 +11,11 @@ class compactDisc
     saturation = 255;
     brightness = 255;
   }
-
   void drawCDs()
   {
     drawCDpart2();
     fakeLights();
     drawCDpart1();
-
     drawCDpart4();
     fakeLights2();
     drawCDpart3();
@@ -37,12 +34,9 @@ class compactDisc
     popMatrix();
   }
 
-  void drawCDpart2() //these are separated in order for the fake lights to only draw on the shiny part of the disc
+  void drawCDpart2() //these are separated in order for the fake lights to only draw on the shiny part of the disc; it draws the grey part of the CD
   {
     pushMatrix();
-    //translate(cdX, cdY);
-    //translate(0,0);
-    //rotate(rotation);
     fill(200);
     stroke(210);
     circle(cdX, cdY, 1000 * cdSize);
@@ -50,10 +44,14 @@ class compactDisc
     textAlign(CENTER);
     textFont(OpenSans);
     textSize(75 * cdSize);
+    popMatrix();
+    pushMatrix();
+    translate(cdX, cdY);
+    rotate(rotation);
     text("Music Guy", cdX, cdY - (cdSize * 250));
     popMatrix();
   }
-
+  
   void drawCDpart3()
   {
     pushMatrix();
@@ -66,13 +64,10 @@ class compactDisc
     circle (cdX + width, cdY, 150 * cdSize);
     popMatrix();
   }
-
+  
   void drawCDpart4() //these are separated in order for the fake lights to only draw on the shiny part of the disc
   {
     pushMatrix();
-    //translate(cdX, cdY);
-    //translate(0,0);
-    //rotate(rotation);
     fill(200);
     stroke(210);
     circle(cdX + width, cdY, 1000 * cdSize);
@@ -80,7 +75,12 @@ class compactDisc
     textAlign(CENTER);
     textFont(OpenSans);
     textSize(75 * cdSize);
-    text("Music Dude", cdX + width, cdY - (cdSize * 250));
+    popMatrix();
+
+    pushMatrix();
+    translate(cdX + width, cdY);
+    rotate(-rotation);
+    text("Music Dude", cdX, cdY - (cdSize * 250));
     popMatrix();
   }
 
@@ -96,8 +96,8 @@ class compactDisc
     arc(0 * cdSize, height/2, 1000 * cdSize, 1000 * cdSize, radians(15), radians(75));
     popMatrix();
   }
-  
-    void fakeLights2()
+
+  void fakeLights2()
   {
     pushMatrix();
     fill(hue1, saturation, brightness, 64);
