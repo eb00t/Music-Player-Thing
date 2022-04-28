@@ -36,7 +36,7 @@ void minimInitialise() // For setup, sets minim variables and plays audio
 
 void setup()
 {
-  size(1440, 860, P3D);
+  size(1920, 1000, P3D);
   colorMode(HSB);
   img = loadImage("discoball.png");
 

@@ -1,9 +1,12 @@
 class HeartVisualiser
 {
 int[] heartarray = new int[6];
+int[] bararray = new int[10];
 int R = int(random(1,255));
 PShape heart;
 PShape BGsquare;
+int x;
+PFont heartfont;
 
   HeartVisualiser() //creates background, interactive directional light & loads heartshape SVG file.
   {
@@ -39,5 +42,28 @@ pushMatrix(); //produces a for loop of heartshape objects, which are then manipu
      shape(heart,width/4*3,20,20,20);
      translate (0, 5000* musicAvg + (musicMax));
 }}
+popMatrix();
+
+heartfont = loadFont("neonw.vlw");
+textFont(heartfont, 36);
+fill(255);
+textSize(80);
+text("HEALTH",width/2 - width/7,height/2-50);
+rectMode(CENTER);
+stroke(0,200,160);
+strokeWeight(5);
+noFill();
+rect(width/2 ,height/2,550,80);
+
+pushMatrix();
+noStroke();
+fill(0,160,120);
+for (int x = 0; x < bararray.length; x++){
+rect(width/2 - width/8,height/2,50,60);
+translate (1000* musicAvg + (musicMax), 0);
+}
+rectMode(CORNER);
 popMatrix();}}
+
+
   
