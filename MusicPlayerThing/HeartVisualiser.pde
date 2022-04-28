@@ -5,8 +5,9 @@ int[] bararray = new int[10];
 int R = int(random(1,255));
 PShape heart;
 PShape BGsquare;
+PShape texth;
 int x;
-PFont heartfont;
+
 
   HeartVisualiser() //creates background, interactive directional light & loads heartshape SVG file.
   {
@@ -20,6 +21,8 @@ PFont heartfont;
     colorMode(RGB);
     fill(R,R,R);
     heart = loadShape("heartp.svg");
+    fill(255);
+    texth = loadShape("htext.svg");
     colorMode(HSB);
   }
   
@@ -43,12 +46,7 @@ pushMatrix(); //produces a for loop of heartshape objects, which are then manipu
      translate (0, 5000* musicAvg + (musicMax));
 }}
 popMatrix();
-
-heartfont = loadFont("neonw.vlw");
-textFont(heartfont, 16);
-fill(255);
-textSize(80);
-text("HEALTH",width/2 - width/7,height/2-50);
+shape(texth,width/2 - width/7,height/2 - height/8,300,60);
 rectMode(CENTER);
 stroke(0,200,160);
 strokeWeight(5);

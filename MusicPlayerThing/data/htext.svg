@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1100"
+   height="250"
+   viewBox="0 0 291.04166 66.145838"
+   version="1.1"
+   id="svg8"
+   inkscape:export-filename="C:\Users\DevFi\Documents\GitHub\Music-Player-Thing\MusicPlayerThing\data\htext.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   sodipodi:docname="htext.svg"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="642.22191"
+     inkscape:cy="-117.72973"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     borderlayer="true"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-230.85412)">
+    <g
+       aria-label="HEALTH"
+       transform="matrix(1.07707,0,0,1.07707,199.38766,368.24154)"
+       style="font-style:normal;font-weight:normal;font-size:73.33333588px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:-1.37px;fill:#ffffff;fill-opacity:1;stroke:none"
+       id="flowRoot10">
+      <path
+         d="m -166.74414,-89.6888 v 17.903647 h -14.32292 v -50.130207 h 14.32292 v 17.90364 h 14.32292 v -17.90364 h 14.32291 v 50.130207 h -14.32291 V -89.6888 Z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Neon Overdrive';-inkscape-font-specification:'Neon Overdrive';fill:#ffffff;fill-opacity:1"
+         id="path829"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m -120.19466,-86.108071 h 28.645835 v 14.322918 h -42.968755 v -50.130207 h 42.968755 v 14.32291 h -28.645835 v 3.58073 h 28.645835 v 14.32292 h -28.645835 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Neon Overdrive';-inkscape-font-specification:'Neon Overdrive';fill:#ffffff;fill-opacity:1"
+         id="path831"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m -59.322262,-104.01172 v -3.58073 h -14.322917 v 3.58073 z m -14.322917,14.32292 v 17.903647 h -14.322917 v -50.130207 h 42.968751 v 50.130207 H -59.322262 V -89.6888 Z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Neon Overdrive';-inkscape-font-specification:'Neon Overdrive';fill:#ffffff;fill-opacity:1"
+         id="path833"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m -41.41862,-71.785153 v -50.130207 h 14.322917 v 35.807289 H 1.5501318 v 14.322918 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Neon Overdrive';-inkscape-font-specification:'Neon Overdrive';fill:#ffffff;fill-opacity:1"
+         id="path835"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 20.169933,-107.59245 v 35.807297 H 5.8470159 V -107.59245 H -8.4759012 v -14.32291 H 34.49285 v 14.32291 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Neon Overdrive';-inkscape-font-specification:'Neon Overdrive';fill:#ffffff;fill-opacity:1"
+         id="path837"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 52.396485,-89.6888 v 17.903647 H 38.073568 v -50.130207 h 14.322917 v 17.90364 h 14.322917 v -17.90364 h 14.322917 v 50.130207 H 66.719402 V -89.6888 Z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Neon Overdrive';-inkscape-font-specification:'Neon Overdrive';fill:#ffffff;fill-opacity:1"
+         id="path839"
+         inkscape:connector-curvature="0" />
+    </g>
+  </g>
+</svg>
