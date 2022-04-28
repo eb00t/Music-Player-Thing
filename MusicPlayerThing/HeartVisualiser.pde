@@ -45,7 +45,7 @@ pushMatrix(); //produces a for loop of heartshape objects, which are then manipu
 popMatrix();
 
 heartfont = loadFont("neonw.vlw");
-textFont(heartfont, 36);
+textFont(heartfont, 16);
 fill(255);
 textSize(80);
 text("HEALTH",width/2 - width/7,height/2-50);
@@ -63,7 +63,8 @@ rect(width/2 - width/8,height/2,50,60);
 translate (1000* musicAvg + (musicMax), 0);
 }
 rectMode(CORNER);
-popMatrix();}}
-
-
-  
+popMatrix();
+stroke(0,180,200);
+strokeWeight(4);
+}
+}
