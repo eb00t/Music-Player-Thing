@@ -20,7 +20,7 @@ The project immediately plays the music whenever the Processing sketch is run.
 | Team Member | Source of Pride |
 | ----------- | ----------- |
 | Erik W | I'm most proud of the kind of framework that I set up for the project (i.e. variable to sync stuff to music, queueing classes, getting minim to work in classes). Given this is more boring than a fancy effect it was the most challenging at the time I made it and was a good bit of fun to figure out using classes in procesing. |
-| ----------- | ----------- | 
+| Elunga | What I am most proud of during the development of our music project is the confidence we developed, as well as the confidence demonstrated by our team. Despite the fact that complications constantly recurring, we were able to overcome them. In addition, I am pleased with the concepts we developed, which performed better than planned. |
 | ----------- | ----------- | 
 | Eoghan | I was most proud of the rotating CDs as getting them to work properly was a lot harder than I thought it would be. It was satisfying seeing them finally work. | 
 
