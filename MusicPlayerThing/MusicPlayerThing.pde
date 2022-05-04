@@ -80,6 +80,7 @@ void draw()
       // draws an audio visualiser (as a waveform) using lines
       cloneArray();
       barVis.drawBars();
+      compactDisc.drawCDs();
     }
 
     if (audioPlayer.position() > 50000 && audioPlayer.position() < 60000) {
@@ -92,14 +93,16 @@ void draw()
       // draws an audio visualiser (as a waveform) using lines
       cloneArray();
       compactDisc.drawCDs();
-
     }
-    
-        if (audioPlayer.position() > 75000 && audioPlayer.position() < 90000) {
+
+    if (audioPlayer.position() > 75000 && audioPlayer.position() < 90000) {
       // draws an audio visualiser (as a waveform) using lines
       cloneArray();
       heartVis.render();
+    }
 
+    if (audioPlayer.position() > 299000) {
+      boxVis.createBox();
     }
 
 

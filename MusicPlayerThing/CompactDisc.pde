@@ -3,6 +3,7 @@ class compactDisc
   float rotateCD; //how fast the cd spins
   float cdX, cdY, cdSize; //x coord, y coord and size of cd
   float hue1, hue2, saturation, brightness;
+  
   compactDisc(float cdX, float cdY, float cdSize)
   {
     this.cdX = cdX;
@@ -38,7 +39,7 @@ class compactDisc
   {
     pushMatrix();
     fill(200);
-    stroke(210);
+    noStroke();
     circle(cdX, cdY, 1000 * cdSize);
     fill(0);
     textAlign(CENTER);
@@ -69,7 +70,7 @@ class compactDisc
   {
     pushMatrix();
     fill(200);
-    stroke(210);
+    noStroke();
     circle(cdX + width, cdY, 1000 * cdSize);
     fill(0);
     textAlign(CENTER);

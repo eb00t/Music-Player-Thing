@@ -2,10 +2,12 @@ class BarVisualiser
 {
   float audioBuffer[];
   float lerpNum;
+  float colorVal, num;
 
   BarVisualiser(float audioBuffer[])
   {
     this.audioBuffer = audioBuffer;
+    
   }
 
   /*
@@ -15,12 +17,15 @@ class BarVisualiser
    */
   void drawBars()
   {
+    
     float step = (width - audioBuffer.length) / 2;
     for (int i = 0; i < audioBuffer.length; i++)
     {
+      num =  musicMax * i;
+      colorVal = lerp(colorVal, num, 0.3f);
       float num = abs(audioBuffer[i] * height/2); // change height/2 to i for a smallest -> biggest graph
       lerpNum = lerp(lerpNum, num, 5f);
-      stroke(255);
+      stroke(colorVal, 255, 255);
       line(i+step, height/2, i+step, height/2 - num); // x1, y1, x2, y2
     }
   }
