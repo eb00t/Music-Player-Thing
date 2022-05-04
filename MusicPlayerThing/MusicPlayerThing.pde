@@ -73,6 +73,8 @@ void draw()
 
     // Transition 2 (26.5 seconds -> 52.5 seconds)
     if (audioPlayer.position() > 26500 && audioPlayer.position() < 52500) {
+      cloneArray();
+      barVis.drawDiagonal();
       danceFloor.drawFloor(); // draws 3d dance floor
       lighting.CreateLight();
       discoBall.render();
@@ -87,55 +89,71 @@ void draw()
     }
 
     // Transition 4 (1:18.5 -> 1:31.5)
-    if (audioPlayer.position() > 78500 && audioPlayer.position() < 91500) {
-      // draws an audio visualiser (as a waveform) using lines
-      cloneArray();
-      barVis.drawDiagonal();
-    }
-
-    // Transition 5 (1:31.5 -> 1:44.5)
-    if (audioPlayer.position() > 91500 && audioPlayer.position() < 104500) {
-      // draws an audio visualiser (as a waveform) using lines
-      cloneArray();
-      compactDisc.drawCDs();
-    }
-
-    // Transition 6 (1:44.5 -> 2:10.5)
-    if (audioPlayer.position() > 104500 && audioPlayer.position() < 135000) {
+    if (audioPlayer.position() > 78500 && audioPlayer.position() < 104500) {
       // draws an audio visualiser (as a waveform) using lines
       cloneArray();
       heartVis.render();
     }
 
-    // Transition 7 (2:10.5 -> 2:36)
-    if (audioPlayer.position() > 135000 && audioPlayer.position() < 156000) {
+
+    // Transition 5 (1:44.5 -> 2:10.5)
+    if (audioPlayer.position() > 104500 && audioPlayer.position() < 130500) {
+      barVis.drawDiagonal();
+      danceFloor.drawFloor(); // draws 3d dance floor
+      lighting.CreateLight();
+      discoBall.render();
     }
 
-    // Transition 8 (2:36 -> 3:02)
+    // Transition 6 (2:10.5 -> 2:36)
+    if (audioPlayer.position() > 130500 && audioPlayer.position() < 156000) {
+      cloneArray();
+      barVis.drawBars();
+      compactDisc.drawCDs();
+    }
+
+    // Transition 7 (2:36 -> 3:02)
     if (audioPlayer.position() > 156000 && audioPlayer.position() < 182000) {
+      cloneArray();
+      boxVis.createBox();
     }
 
-    // Transition 9 (3:02 -> 3:28)
+    // Transition 8 (3:02 -> 3:28)
     if (audioPlayer.position() > 182000 && audioPlayer.position() < 208000) {
+      cloneArray();
+      heartVis.render();
     }
 
-    // Transition 10 (3:28 -> 3:54)
+    // Transition 9 (3:28 -> 3:54)
     if (audioPlayer.position() > 208000 && audioPlayer.position() < 234000) {
+      cloneArray();
+      barVis.drawDiagonal();
+      danceFloor.drawFloor(); // draws 3d dance floor
+      lighting.CreateLight();
+      discoBall.render();
     }
 
-    //Transition 11 (3:54 -> 4:07)
+    //Transition 10 (3:54 -> 4:07)
     if (audioPlayer.position() > 234000 && audioPlayer.position() < 247000) {
+      cloneArray();
+      barVis.drawDiagonal();
+      barVis.drawBars();
     }
 
-    //Transition 12 (4:07 -> 4:33)
+    //Transition 11 (4:07 -> 4:33)
     if (audioPlayer.position() > 247000 && audioPlayer.position() < 273000) {
+      cloneArray();
+      barVis.drawBars();
+      compactDisc.drawCDs();
     }
 
-    //Transition 13 (4:33 -> 4:59)
+    //Transition 12 (4:33 -> 4:59)
     if (audioPlayer.position() > 273000 && audioPlayer.position() < 299000) {
+      cloneArray();
+      heartVis.render();
     }
+
     // Final Transition (4:59)
-    if (audioPlayer.position() > 299000) {
+    if (audioPlayer.position() > 299000 && audioPlayer.position() < 312500) {
       boxVis.createBox();
     }
 
@@ -195,6 +213,7 @@ void progressIndicator()
   float step = (width) / (runTime/1000); // divides the width by the number of runtime seconds
   float barPos = (currentTime/1000) * step; // multiplies the number of steps by the number of seconds that have played so far
 
+  noStroke();
   fill(255);
 
   // basically turns the sketch into a janky youtube
