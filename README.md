@@ -14,6 +14,6 @@ The project immediately plays the music whenever the Processing sketch is run.
 | ----------- | ----------- |
 | ----------- | ----------- |
 | ----------- | ----------- | 
-| ----------- | ----------- | 
+| Eoghan | I was most proud of the rotating CDs as getting them to work properly was a lot harder than I thought it would be. It was satisfying seeing them finally work. | 
 
 ## What each team member did?
