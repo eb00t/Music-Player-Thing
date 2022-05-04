@@ -5,8 +5,9 @@ int[] bararray = new int[10];
 int R = int(random(1,255));
 PShape heart;
 PShape BGsquare;
+PShape texth;
 int x;
-PFont heartfont;
+
 
   HeartVisualiser() //creates background, interactive directional light & loads heartshape SVG file.
   {
@@ -20,6 +21,8 @@ PFont heartfont;
     colorMode(RGB);
     fill(R,R,R);
     heart = loadShape("heartp.svg");
+    fill(255);
+    texth = loadShape("htext.svg");
     colorMode(HSB);
   }
   
@@ -43,14 +46,9 @@ pushMatrix(); //produces a for loop of heartshape objects, which are then manipu
      translate (0, 5000* musicAvg + (musicMax));
 }}
 popMatrix();
-
-heartfont = loadFont("neonw.vlw");
-textFont(heartfont, 16);
-fill(255);
-textSize(80);
-text("HEALTH",width/2 - width/7,height/2-50);
+shape(texth,width/2 - width/7,height/2 - height/8,300,60); //Displays an SVG containing text transformed into shapes, reducing likelihood of excess memory consumption.
 rectMode(CENTER);
-stroke(0,200,160);
+stroke(0,200,160); 
 strokeWeight(5);
 noFill();
 rect(width/2 ,height/2,550,80);
@@ -58,13 +56,14 @@ rect(width/2 ,height/2,550,80);
 pushMatrix();
 noStroke();
 fill(0,160,120);
-for (int x = 0; x < bararray.length; x++){
+for (int x = 0; x < bararray.length; x++){ //produces a for loop of rectangles, which are then manipulated in the translate function on the X axis.
 rect(width/2 - width/8,height/2,50,60);
 translate (1000* musicAvg + (musicMax), 0);
 }
 rectMode(CORNER);
 popMatrix();
-stroke(0,180,200);
+stroke(0,180,200); //places a red stroke around the progress bar for the duration of heartVis.render
 strokeWeight(4);
+shape(heart,mouseX,mouseY,20,20); //produces a heart shape that follows the mouse.
 }
 }
