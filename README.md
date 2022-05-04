@@ -14,6 +14,7 @@ The project immediately plays the music whenever the Processing sketch is run.
 | ----------- | ----------- |
 | Erik W | I'm most proud of the kind of framework that I set up for the project (i.e. variable to sync stuff to music, queueing classes, getting minim to work in classes). Given this is more boring than a fancy effect it was the most challenging at the time I made it and was a good bit of fun to figure out using classes in procesing. |
 | ----------- | ----------- | 
+| ----------- | ----------- | 
 | Eoghan | I was most proud of the rotating CDs as getting them to work properly was a lot harder than I thought it would be. It was satisfying seeing them finally work. | 
 
 ## What each team member did?
