@@ -1,5 +1,11 @@
 # Music Player Thing
  
+*Team Members:
+Elunga Mkunde C21359403
+Erik Watchorn - C21449374 
+Adam Crossan -C21505593
+Eoghan O’Reilly - C21430996*
+ 
 ## What does our project do?
 Our project is a music player. It contains many visualisers (such as a rotating cube and a dance floor), an audio scrubber and the ability to pause and unpause the music track at any time.
 
