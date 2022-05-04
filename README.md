@@ -20,7 +20,7 @@ The project immediately plays the music whenever the Processing sketch is run.
 ## What each team member did?
 | Team Member | Source of Pride |
 | ----------- | ----------- |
-| ----------- | ----------- |
+| Erik W | Set up a variable (musicAvg) for calculations that want to sync to the music. For this, I had to clone the array of audioBuffer.size() to abClone() and sending them into classes. A simple system for queueing classes (each class holds a separate visual effect) that runs at specific set times. Progress bar/ scrubber that allows you to change the position of the audio. Also pressing space to pause and unpause. There is also a timer that required calculating seconds/minutes from milliseconds and adding a 0 if the second was a single digit to prevent '4:9' instead of '4:09' being displayed. Simple bar visualiser, can be set to have smallest -> biggest music value graphs. Cube visualiser that rotates, changes size and colour based on the musicAvg variable. Some work with Eoghan on the dance floor class, making it work with the music. |
 | ----------- | ----------- |
 | ----------- | ----------- |
 | Eoghan | I helped with the dance floor and disco ball. I also made the rotating CDs. |
