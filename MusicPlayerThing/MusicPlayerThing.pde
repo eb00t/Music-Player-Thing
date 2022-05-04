@@ -65,42 +65,76 @@ void draw()
   // checks if the audio called inside minim is playing (it may take a few seconds to start playing)
   if (audioPlayer.isPlaying()) {
     // checks if time in the song is less than x miliseconds (1 seconds = 1000 milliseconds)
+
+    // Initial Transition (until 26.5 seconds)
     if (audioPlayer.position() < 26500) {
       boxVis.createBox(); // draws box that changes size based on audio
     }
 
-    if (audioPlayer.position() > 26500 && audioPlayer.position() < 40000) {
+    // Transition 2 (26.5 seconds -> 52.5 seconds)
+    if (audioPlayer.position() > 26500 && audioPlayer.position() < 52500) {
       danceFloor.drawFloor(); // draws 3d dance floor
       lighting.CreateLight();
-
       discoBall.render();
     }
 
-    if (audioPlayer.position() > 40000 && audioPlayer.position() < 50000) {
+    // Transition 3 (52.5 seconds -> 1:18.5)
+    if (audioPlayer.position() > 52500 && audioPlayer.position() < 78500) {
       // draws an audio visualiser (as a waveform) using lines
       cloneArray();
       barVis.drawBars();
       compactDisc.drawCDs();
     }
 
-    if (audioPlayer.position() > 50000 && audioPlayer.position() < 60000) {
+    // Transition 4 (1:18.5 -> 1:31.5)
+    if (audioPlayer.position() > 78500 && audioPlayer.position() < 91500) {
       // draws an audio visualiser (as a waveform) using lines
       cloneArray();
       barVis.drawDiagonal();
     }
 
-    if (audioPlayer.position() > 60000 && audioPlayer.position() < 75000) {
+    // Transition 5 (1:31.5 -> 1:44.5)
+    if (audioPlayer.position() > 91500 && audioPlayer.position() < 104500) {
       // draws an audio visualiser (as a waveform) using lines
       cloneArray();
       compactDisc.drawCDs();
     }
 
-    if (audioPlayer.position() > 75000 && audioPlayer.position() < 90000) {
+    // Transition 6 (1:44.5 -> 2:10.5)
+    if (audioPlayer.position() > 104500 && audioPlayer.position() < 135000) {
       // draws an audio visualiser (as a waveform) using lines
       cloneArray();
       heartVis.render();
     }
 
+    // Transition 7 (2:10.5 -> 2:36)
+    if (audioPlayer.position() > 135000 && audioPlayer.position() < 156000) {
+    }
+
+    // Transition 8 (2:36 -> 3:02)
+    if (audioPlayer.position() > 156000 && audioPlayer.position() < 182000) {
+    }
+
+    // Transition 9 (3:02 -> 3:28)
+    if (audioPlayer.position() > 182000 && audioPlayer.position() < 208000) {
+    }
+
+    // Transition 10 (3:28 -> 3:54)
+    if (audioPlayer.position() > 208000 && audioPlayer.position() < 234000) {
+    }
+
+    //Transition 11 (3:54 -> 4:07)
+    if (audioPlayer.position() > 234000 && audioPlayer.position() < 247000) {
+    }
+
+    //Transition 12 (4:07 -> 4:33)
+    if (audioPlayer.position() > 247000 && audioPlayer.position() < 273000) {
+    }
+
+    //Transition 13 (4:33 -> 4:59)
+    if (audioPlayer.position() > 273000 && audioPlayer.position() < 299000) {
+    }
+    // Final Transition (4:59)
     if (audioPlayer.position() > 299000) {
       boxVis.createBox();
     }
