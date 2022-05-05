@@ -16,7 +16,7 @@ class DiscoBall
     noStroke();
     noFill();
     disball = createShape(SPHERE, size);
-    //disball.setTexture(img);
+    disball.setTexture(img);
   }
 
   void render()
