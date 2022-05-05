@@ -14,7 +14,7 @@ Our music player is primarily composed of two components: one being visualisers,
 We equip individuals with the opportunity to stop and resume streaming of our music project; additionally, the button utilised to execute such activities is space. We decided to design such a function because we wish to offer the individual some power and allow them to select their own pacing or analysis of what is displayed on the screen. Furthermore, we created an audio player scrubber, which, unlike the pause and resume feature, allows individuals to oscillate through the timeline of our music project.
 
 ## How does the project run?
-The project immediately plays the music whenever the Processing sketch is run.
+Simplicity was our main concern with regards to executing our music project, which in turn constitutes the immediate playing of our music project when the processing sketch is run. 
 
 ## What are we most proud of?
 | Team Member | Source of Pride |
