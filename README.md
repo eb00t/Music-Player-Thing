@@ -8,7 +8,7 @@
 | Eoghan O’Reilly | C21430996 |
  
 ## What does our project do?
-Our project is a music player. It contains many visualisers (such as a rotating cube and a dance floor), an audio scrubber and the ability to pause and unpause the music track at any time.
+Our music player is primarily composed of two components: one being visualises, of which there are four, each with distinct aesthetic aspects (including a rotating cube, dance floor with abstract background, and a download loading bar). A second component is function, which involves an audio player scrubber that allows users to Oscillate between transitions (or time) and the option to halt and continue playing. 
 
 ## What are the controls?
 The player can be paused and unpaused at any time by pressing space. It also contains a scrubber, which allows for the movement of the audio track to specific points in the song.
