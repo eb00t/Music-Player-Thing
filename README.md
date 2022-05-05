@@ -11,10 +11,10 @@
 Our music player is primarily composed of two components: one being visualisers, of which there are four, each with distinct aesthetic aspects (including a rotating cube, dance floor with abstract background, and a download loading bar). A second component is function, which involves an audio player scrubber that allows users to oscillate between transitions (or time) and the option to halt and continue playing. 
 
 ## What are the controls?
-We equip individuals with the opportunity to stop and resume streaming of our music project; additionally, the button utilised to execute such activities is space. We decided to design such a function because we wish to offer the individual some power and allow them to select their own pacing or analysis of what is displayed on the screen. Furthermore, we created an audio player scrubber, which, unlike the pause and resume feature, allows individuals to oscillate through the timeline of our music project.
+The player can be paused and unpaused at any time by pressing space. It also contains a scrubber, which allows for the movement of the audio track to specific points in the song.
 
 ## How does the project run?
-Simplicity was our main concern with regards to executing our music project, which in turn constitutes the immediate playing of our music project when the processing sketch is run. 
+The project immediately plays the music whenever the Processing sketch is run.
 
 ## What are we most proud of?
 | Team Member | Source of Pride |
